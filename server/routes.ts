@@ -85,26 +85,31 @@ async function seedDatabase() {
 
   const existingStaff = await storage.getStaff();
   if (existingStaff.length === 0) {
-    // Seed Staff
+    // Seed Staff with corrected names
     await storage.createStaff({
-      name: "حسن الطايب",
+      name: "حسن التايب",
       role: "مدير المؤسسة",
       category: "admin",
-      bio: "خبرة 20 سنة في مجال الإدارة التربوية.",
+      bio: "خبرة في مجال الإدارة التربوية.",
     });
     await storage.createStaff({
-      name: "فاطمة الزهراء",
-      role: "أستاذة اللغة العربية",
+      name: "رحيمو ولاد الفقيه",
+      role: "أستاذة التعليم الابتدائي",
       category: "teacher",
     });
     await storage.createStaff({
-      name: "أحمد العمراني",
-      role: "أستاذ الرياضيات",
+      name: "عثمان نيابو",
+      role: "أستاذ التعليم الابتدائي",
       category: "teacher",
     });
     await storage.createStaff({
-      name: "سناء العلمي",
-      role: "أستاذة اللغة الفرنسية",
+      name: "سارة ملوكي",
+      role: "أستاذة التعليم الابتدائي",
+      category: "teacher",
+    });
+    await storage.createStaff({
+      name: "محمد البدراوي",
+      role: "أستاذ التعليم الابتدائي",
       category: "teacher",
     });
   }
