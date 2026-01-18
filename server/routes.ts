@@ -62,7 +62,7 @@ export async function registerRoutes(
 async function seedDatabase() {
   const existingActivities = await storage.getActivities();
   if (existingActivities.length === 0) {
-    // Seed Activities with corrected image paths using public directory
+    // Seed Activities with direct relative paths to public assets
     await storage.createActivity({
       title: "حملة التوعية بالسلامة الطرقية",
       content: "نظمت المؤسسة حملة تحسيسية لفائدة التلاميذ حول قواعد السلامة الطرقية وأهمية احترام قانون السير. تضمنت الحملة ورشات تطبيقية وعروضاً توضيحية لترسيخ ثقافة السلامة الطرقية لدى الناشئة.",

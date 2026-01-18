@@ -15,10 +15,23 @@ export function ActivityCard({ activity }: { activity: Activity }) {
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
           onError={(e) => {
             const img = e.target as HTMLImageElement;
-            // Try different paths if the first one fails
-            if (img.src.includes('/attached_assets/')) {
-               // Fallback to placeholder if public path fails
-               img.src = "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2022&auto=format&fit=crop";
+            // Handle different path conventions
+            const fileName = img.src.split('/').pop();
+            const fallback = "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2022&auto=format&fit=crop";
+            
+            if (fileName && !img.src.includes('unsplash') && !img.src.includes('base64')) {
+              // Extract original filename if it has URL encoding or extra stuff
+              const cleanFileName = decodeURIComponent(fileName).split('?')[0];
+              const newSrc = `/attached_assets/${cleanFileName}`;
+              
+              if (img.src !== newSrc && !img.dataset.failed) {
+                img.src = newSrc;
+                img.dataset.failed = "true"; // Prevent infinite loop
+              } else {
+                img.src = fallback;
+              }
+            } else {
+              img.src = fallback;
             }
           }}
         />

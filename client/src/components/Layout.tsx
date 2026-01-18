@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/button";
 import { cn } from "@/lib/utils";
 import { motion } from "framer-motion";
 
+import schoolLogo from "@assets/WhatsApp_Image_2026-01-18_at_01.35.17_(1)_1768697606375.jpeg";
+
 const NAV_ITEMS = [
   { label: "الرئيسية", path: "/" },
   { label: "من نحن", path: "/about" },
@@ -45,8 +47,8 @@ export function Layout({ children }: { children: React.ReactNode }) {
         <div className="container mx-auto px-4 h-20 flex items-center justify-between">
           <Link href="/">
             <div className="flex items-center gap-3 cursor-pointer group">
-              <div className="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary group-hover:bg-primary group-hover:text-white transition-colors duration-300">
-                <GraduationCap className="w-7 h-7" />
+              <div className="w-12 h-12 rounded-full overflow-hidden border border-primary/20 flex items-center justify-center bg-white transition-all duration-300 group-hover:shadow-md">
+                <img src={schoolLogo} alt="Logo" className="w-full h-full object-contain p-1" />
               </div>
               <div className="flex flex-col">
                 <h1 className="text-xl font-bold text-primary leading-tight">مدرسة ابن خلدون</h1>
@@ -169,6 +171,13 @@ export function Layout({ children }: { children: React.ReactNode }) {
           </div>
           
           <div className="border-t border-slate-800 mt-12 pt-8 text-center text-slate-500 text-sm">
+            <div className="flex justify-center mb-6">
+              <img 
+                src={schoolLogo} 
+                alt="Logo مدرسة ابن خلدون" 
+                className="w-24 h-24 rounded-full border-2 border-slate-700 shadow-lg object-contain bg-white p-1"
+              />
+            </div>
             <p className="mb-2">من اعداد بكر السعيدي حيون</p>
             <p>&copy; {new Date().getFullYear()} مدرسة ابن خلدون الابتدائية - العرائش. جميع الحقوق محفوظة.</p>
           </div>
