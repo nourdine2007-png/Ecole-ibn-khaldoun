@@ -21,6 +21,8 @@ export function ActivityCard({ activity }: { activity: Activity }) {
             {activity.category === 'cultural' && 'ثقافي'}
             {activity.category === 'educational' && 'تربوي'}
             {activity.category === 'general' && 'عام'}
+            {/* Fallback for non-matching categories */}
+            {!['sports', 'cultural', 'educational', 'general'].includes(activity.category) && activity.category}
           </Badge>
         </div>
       </div>

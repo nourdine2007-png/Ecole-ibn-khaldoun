@@ -62,23 +62,23 @@ export async function registerRoutes(
 async function seedDatabase() {
   const existingActivities = await storage.getActivities();
   if (existingActivities.length === 0) {
-    // Seed Activities with real school images and summaries
+    // Seed Activities with corrected image paths and summaries
     await storage.createActivity({
       title: "حملة التوعية بالسلامة الطرقية",
       content: "نظمت المؤسسة حملة تحسيسية لفائدة التلاميذ حول قواعد السلامة الطرقية وأهمية احترام قانون السير. تضمنت الحملة ورشات تطبيقية وعروضاً توضيحية لترسيخ ثقافة السلامة الطرقية لدى الناشئة.",
-      category: "تحسيسية",
+      category: "educational", // Changed from 'تحسيسية' to 'educational'
       imageUrl: "/attached_assets/WhatsApp_Image_2026-01-18_at_01.42.17_(1)_1768697042248.jpeg",
     });
     await storage.createActivity({
       title: "التحول الرقمي في التعليم",
       content: "استخدام التكنولوجيا الحديثة والوسائط المتعددة لتسهيل عملية التعلم وتطوير مهارات التلاميذ الرقمية. تهدف هذه المبادرة إلى دمج الأدوات الرقمية في المناهج الدراسية لتحفيز الإبداع والابتكار.",
-      category: "تربوية",
+      category: "educational", // Changed from 'تربوية' to 'educational'
       imageUrl: "/attached_assets/WhatsApp_Image_2026-01-18_at_01.42.16_1768697060573.jpeg",
     });
     await storage.createActivity({
       title: "ورشة العمل الجماعي",
       content: "تشجيع التلاميذ على التعاون والعمل كفريق واحد من خلال أنشطة تفاعلية داخل الفصل. تركز الورشة على تنمية المهارات الاجتماعية وروح الفريق لدى المتعلمين.",
-      category: "ثقافية",
+      category: "cultural", // Changed from 'ثقافية' to 'cultural'
       imageUrl: "/attached_assets/WhatsApp_Image_2026-01-18_at_01.42.17_1768697050251.jpeg",
     });
   }
