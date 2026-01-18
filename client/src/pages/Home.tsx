@@ -7,6 +7,8 @@ import { ActivityCard } from "@/components/ActivityCard";
 import { useActivities } from "@/hooks/use-school-data";
 
 import bannerImg from "@assets/WhatsApp_Image_2026-01-18_at_01.35.17_1768696739472.jpeg";
+import classImg1 from "@assets/WhatsApp_Image_2026-01-18_at_01.42.17_(3)_1768697024039.jpeg";
+import classImg2 from "@assets/WhatsApp_Image_2026-01-18_at_01.42.17_(2)_1768697030895.jpeg";
 
 export default function Home() {
   const { data: activities, isLoading } = useActivities();
@@ -60,16 +62,15 @@ export default function Home() {
               className="relative"
             >
               <div className="grid grid-cols-2 gap-4">
-                {/* Unsplash Education Images */}
                 <img 
-                  src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=1000&auto=format&fit=crop" 
-                  alt="Students" 
-                  className="rounded-2xl shadow-lg mt-8"
+                  src={classImg1} 
+                  alt="Students in classroom" 
+                  className="rounded-2xl shadow-lg mt-8 h-64 object-cover"
                 />
                 <img 
-                  src="https://pixabay.com/get/g11755d556e0ceee1a08e8a6f086ac67895f652fc6ccc0d8b32a4f2c12191dc851c90c9d99e8900b09749aad3cd0a680ad3604c7f85b1e3c41f5109b2a1cb64c6_1280.jpg" 
-                  alt="Classroom" 
-                  className="rounded-2xl shadow-lg"
+                  src={classImg2} 
+                  alt="Teacher with student" 
+                  className="rounded-2xl shadow-lg h-64 object-cover"
                 />
               </div>
               {/* Decorative Element */}

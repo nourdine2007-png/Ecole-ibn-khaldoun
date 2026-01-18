@@ -62,24 +62,24 @@ export async function registerRoutes(
 async function seedDatabase() {
   const existingActivities = await storage.getActivities();
   if (existingActivities.length === 0) {
-    // Seed Activities
+    // Seed Activities with real school images
     await storage.createActivity({
       title: "حملة التوعية بالسلامة الطرقية",
       content: "نظمت المؤسسة حملة تحسيسية لفائدة التلاميذ حول قواعد السلامة الطرقية وأهمية احترام قانون السير.",
       category: "تحسيسية",
-      imageUrl: "https://images.unsplash.com/photo-1571210862729-78a52d3779a2?ixlib=rb-4.0.3",
+      imageUrl: "/attached_assets/WhatsApp_Image_2026-01-18_at_01.42.17_(1)_1768697042248.jpeg",
     });
     await storage.createActivity({
-      title: "دوري كرة القدم المصغر",
-      content: "انطلاق فعاليات دوري كرة القدم بين أقسام المستويات العليا، في جو من المنافسة الشريفة والروح الرياضية.",
-      category: "رياضية",
-      imageUrl: "https://images.unsplash.com/photo-1526232761682-d26e03ac148e?ixlib=rb-4.0.3",
+      title: "التحول الرقمي في التعليم",
+      content: "استخدام التكنولوجيا الحديثة والوسائط المتعددة لتسهيل عملية التعلم وتطوير مهارات التلاميذ الرقمية.",
+      category: "تربوية",
+      imageUrl: "/attached_assets/WhatsApp_Image_2026-01-18_at_01.42.16_1768697060573.jpeg",
     });
     await storage.createActivity({
-      title: "ورشة الرسم والتدوير",
-      content: "ورشة فنية لتعليم التلاميذ كيفية إعادة تدوير النفايات وتحويلها إلى أعمال فنية جميلة.",
+      title: "ورشة العمل الجماعي",
+      content: "تشجيع التلاميذ على التعاون والعمل كفريق واحد من خلال أنشطة تفاعلية داخل الفصل.",
       category: "ثقافية",
-      imageUrl: "https://images.unsplash.com/photo-1544776193-ade276d16f9a?ixlib=rb-4.0.3",
+      imageUrl: "/attached_assets/WhatsApp_Image_2026-01-18_at_01.42.17_1768697050251.jpeg",
     });
   }
 
