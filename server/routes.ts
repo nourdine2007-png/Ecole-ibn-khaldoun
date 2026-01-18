@@ -112,6 +112,21 @@ async function seedDatabase() {
       role: "أستاذ التعليم الابتدائي",
       category: "teacher",
     });
+    await storage.createStaff({
+      name: "فاطمة الزهراء",
+      role: "أستاذة اللغة العربية",
+      category: "teacher",
+    });
+    await storage.createStaff({
+      name: "أحمد العمراني",
+      role: "أستاذ الرياضيات",
+      category: "teacher",
+    });
+    await storage.createStaff({
+      name: "سناء العلمي",
+      role: "أستاذة اللغة الفرنسية",
+      category: "teacher",
+    });
   }
 
   const existingGallery = await storage.getGalleryItems();
