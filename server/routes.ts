@@ -127,6 +127,11 @@ async function seedDatabase() {
       role: "أستاذة اللغة الفرنسية",
       category: "teacher",
     });
+    await storage.createStaff({
+      name: "نجاة بدري",
+      role: "أستاذة التعليم الابتدائي",
+      category: "teacher",
+    });
   }
 
   const existingGallery = await storage.getGalleryItems();
