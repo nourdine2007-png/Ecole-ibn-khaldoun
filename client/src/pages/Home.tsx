@@ -6,6 +6,8 @@ import { SectionHeader } from "@/components/SectionHeader";
 import { ActivityCard } from "@/components/ActivityCard";
 import { useActivities } from "@/hooks/use-school-data";
 
+import bannerImg from "@assets/WhatsApp_Image_2026-01-18_at_01.35.17_1768696739472.jpeg";
+
 export default function Home() {
   const { data: activities, isLoading } = useActivities();
 
@@ -19,49 +21,12 @@ export default function Home() {
   return (
     <div className="flex flex-col gap-0">
       {/* HERO SECTION */}
-      <section className="relative h-[600px] flex items-center justify-center overflow-hidden">
-        {/* Background Image with Overlay */}
-        <div className="absolute inset-0 z-0">
-          {/* Unsplash School Image */}
-          <img 
-            src="https://pixabay.com/get/ga44aed7e9aba1b2e0d1807a3d5dae21ab841639843cbfa474ae3512c198aab91c3ac699ac655d6ca8bb07ee821d1f161f58d2be965de35fa4e21ac22df82ccc1_1280.jpg" 
-            alt="مدرسة ابن خلدون" 
-            className="w-full h-full object-cover"
-          />
-          <div className="absolute inset-0 bg-gradient-to-r from-primary/90 to-primary/60 mix-blend-multiply"></div>
-        </div>
-
-        {/* Content */}
-        <div className="container relative z-10 px-4 text-center text-white">
-          <motion.div 
-            initial={{ opacity: 0, scale: 0.9 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 0.7 }}
-            className="max-w-3xl mx-auto"
-          >
-            <div className="inline-block mb-4 px-4 py-1.5 rounded-full bg-accent/20 border border-accent/40 backdrop-blur-sm text-accent-foreground font-semibold text-sm">
-              مؤسسة تعليمية عمومية رائدة
-            </div>
-            <h1 className="text-4xl md:text-6xl lg:text-7xl font-bold mb-6 leading-tight">
-              مدرسة ابن خلدون الابتدائية
-            </h1>
-            <p className="text-lg md:text-xl text-white/90 mb-8 leading-relaxed max-w-2xl mx-auto">
-              نسعى لبناء جيل واعد، متسلح بالعلم والمعرفة، متشبع بالقيم الوطنية والإنسانية، في بيئة تربوية آمنة ومحفزة.
-            </p>
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Link href="/about">
-                <Button size="lg" className="bg-accent text-accent-foreground hover:bg-accent/90 text-lg px-8 h-14">
-                  اكتشف مدرستنا
-                </Button>
-              </Link>
-              <Link href="/contact">
-                <Button size="lg" variant="outline" className="border-white/40 text-white hover:bg-white/10 hover:text-white text-lg px-8 h-14 bg-transparent">
-                  تواصل معنا
-                </Button>
-              </Link>
-            </div>
-          </motion.div>
-        </div>
+      <section className="relative w-full overflow-hidden">
+        <img 
+          src={bannerImg} 
+          alt="مدرسة ابن خلدون - المدارس الرائدة" 
+          className="w-full h-auto object-contain"
+        />
       </section>
 
       {/* INTRO/ABOUT SNIPPET */}
@@ -186,6 +151,13 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* FOOTER CREDITS */}
+      <footer className="py-6 bg-background border-t">
+        <div className="container mx-auto px-4 text-center text-muted-foreground">
+          <p className="text-sm">من اعداد بكر السعيدي حيون</p>
+        </div>
+      </footer>
     </div>
   );
 }
