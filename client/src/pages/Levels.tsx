@@ -62,9 +62,8 @@ export default function Levels() {
                 </ul>
              </div>
              <div>
-               {/* Unsplash Classroom Image */}
                <img 
-                 src="https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2070&auto=format&fit=crop" 
+                 src="/attached_assets/WhatsApp_Image_2026-01-18_at_02.05.17_1768698393808.jpeg" 
                  alt="Classroom Organization" 
                  className="rounded-2xl shadow-xl w-full"
                />
