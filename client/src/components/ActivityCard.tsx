@@ -9,11 +9,18 @@ export function ActivityCard({ activity }: { activity: Activity }) {
   return (
     <Card className="overflow-hidden hover:shadow-lg transition-all duration-300 group border-border/50 h-full flex flex-col">
       <div className="relative h-48 overflow-hidden">
-        {/* Descriptive alt text for Unsplash images if used */}
         <img 
           src={activity.imageUrl || "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2022&auto=format&fit=crop"} 
           alt={activity.title}
           className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+          onError={(e) => {
+            const img = e.target as HTMLImageElement;
+            // Try different paths if the first one fails
+            if (img.src.includes('/attached_assets/')) {
+               // Fallback to placeholder if public path fails
+               img.src = "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?q=80&w=2022&auto=format&fit=crop";
+            }
+          }}
         />
         <div className="absolute top-4 right-4">
           <Badge className="bg-white/90 text-primary hover:bg-white font-bold backdrop-blur-sm shadow-sm">
