@@ -111,23 +111,23 @@ async function seedDatabase() {
 
   const existingGallery = await storage.getGalleryItems();
   if (existingGallery.length === 0) {
-    // Seed Gallery
+    // Seed Gallery with provided school images
     await storage.createGalleryItem({
-      title: "حفل نهاية السنة",
-      description: "صور من حفل توزيع الجوائز على المتفوقين.",
-      mediaUrl: "https://images.unsplash.com/photo-1523580494863-6f3031224c94?ixlib=rb-4.0.3",
+      title: "الاحتفال بالمسيرة الخضراء",
+      description: "صور تذكارية من احتفال المؤسسة بذكرى المسيرة الخضراء المظفرة.",
+      mediaUrl: "/attached_assets/WhatsApp_Image_2026-01-18_at_01.57.21_1768697931851.jpeg",
       category: "events",
     });
     await storage.createGalleryItem({
-      title: "الرحلة المدرسية",
-      description: "زيارة للمآثر التاريخية بالمدينة.",
-      mediaUrl: "https://images.unsplash.com/photo-1541339907198-e08756dedf3f?ixlib=rb-4.0.3",
+      title: "مشاركة التلاميذ في الأنشطة الثقافية",
+      description: "تلاميذ المؤسسة بزي تقليدي خلال إحدى التظاهرات الثقافية.",
+      mediaUrl: "/attached_assets/WhatsApp_Image_2026-01-18_at_01.57.22_1768697939202.jpeg",
       category: "trips",
     });
     await storage.createGalleryItem({
-      title: "أنشطة القسم",
-      description: "تفاعل التلاميذ داخل الفصل.",
-      mediaUrl: "https://images.unsplash.com/photo-1503676260728-1c00da094a0b?ixlib=rb-4.0.3",
+      title: "لقاءات تربوية وتواصلية",
+      description: "جانب من اللقاءات التواصلية والأنشطة الموازية التي تنظمها المؤسسة.",
+      mediaUrl: "/attached_assets/WhatsApp_Image_2026-01-18_at_01.57.22_(1)_1768697945368.jpeg",
       category: "classroom",
     });
   }
