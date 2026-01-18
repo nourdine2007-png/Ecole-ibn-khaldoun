@@ -169,6 +169,7 @@ export function Layout({ children }: { children: React.ReactNode }) {
           </div>
           
           <div className="border-t border-slate-800 mt-12 pt-8 text-center text-slate-500 text-sm">
+            <p className="mb-2">من اعداد بكر السعيدي حيون</p>
             <p>&copy; {new Date().getFullYear()} مدرسة ابن خلدون الابتدائية - العرائش. جميع الحقوق محفوظة.</p>
           </div>
         </div>
